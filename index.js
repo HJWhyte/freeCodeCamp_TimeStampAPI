@@ -24,6 +24,9 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+// Function to check condition of if given date is invalid
+const isInvalidDate = (date) => date.toUTCString() === "Invalid Date"
+
 // API endpoint to return Unix timestamp of Request Param - Date
 app.get("/api/:date?", function(req, res){
   let d = new Date()
